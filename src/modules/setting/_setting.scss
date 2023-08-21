@@ -1,0 +1,135 @@
+// *** Today's Availability ***//
+@import './../../scss/variables';
+
+.setting-main-wrap{
+    background: none;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 80vh;
+    input{
+        display: flex;
+        justify-content: center;
+        max-width: 300px;
+        margin: 0 auto 15px auto;
+        border-radius: 20px;
+        border: 1px solid $primary_color;
+        margin-bottom: 75px;
+    }
+    .ant-table-wrapper{
+        width: 90%;
+        margin:0 auto;
+        
+        background-color: $primary_color2;
+        .ant-table-content{
+            .ant-table-tbody{
+                background-color: $primary_color2;
+                tr{
+                    td{
+                        border-bottom: none;
+                        text-align: center;
+                        color:white;
+                        background: none;
+                    }
+                }
+                .action-button{
+                    button{
+                        color: white;
+                        border: none;
+                        box-shadow: none;
+                        font-weight: bold;
+                    }
+                    .delete{
+                        background-color: red;
+                    }
+                    .edit {
+                        background-color: $primary_color
+                    }
+                    
+                }
+            }
+            th{
+                background-color: $primary_color;
+                border:none;
+                color:white;
+                text-align: center;
+            }
+        }
+    }
+    .sortable{
+        margin-top: 50px;
+        flex:none;
+        position: absolute;
+        top: 19%;
+        right: 75px;
+        button{
+            background: $primary_color;
+            color: white;
+            font-weight: bold;
+            &:hover{
+                color:white !important;
+                border:none ;
+            }
+        }
+    }
+}
+
+.edit-modal{
+    width: 400px;
+    .ant-modal-body{
+        h4{
+            margin-top: 0px;
+            margin-bottom: 30px;
+            color:#ffffff
+        }
+    }
+    .ant-modal-content{
+        background-color: $primary_color2;
+        .ant-table-tbody{
+            background-color: $primary_color2;
+            tr{
+                td{
+                    border-bottom: none;
+                }
+            }
+        }
+        th{
+            background-color: $primary_color;
+        }
+        .ant-picker{
+            display: flex;
+            justify-content: center;
+            max-width: 300px;
+            margin: 0 auto 15px auto;
+        }
+    }
+    .form-wrap{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .form-button{
+            .ant-form-item-control-input-content{
+                display: flex;
+                justify-content: space-around;
+                padding-top: 25px;
+                .btn-success{
+                    background-color: #52dfce;
+                }
+                .btn-cancel{
+                    background-color: #DC143B;
+                }
+            }
+        }
+    }
+}
+.delete-modal {
+    .ant-modal-title {
+      color: red !important;
+      font-weight: bold !important;
+    }
+    .ant-btn-primary {
+      background-color: red !important;
+      font-weight: bold;
+    }
+  }

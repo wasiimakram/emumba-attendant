@@ -1,0 +1,93 @@
+// *** Login ***//
+$primary_color:#0ec1b0;
+$primary_color2:#F0F0F0;
+// Logig-Page
+.user-login-main-wrap{
+    h4{color:$primary_color}
+    margin-top: 150px;
+    background: none;
+    form{
+        width: 310px;
+    }
+    .form-wrap{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .ant-input-prefix{
+            color:$primary_color
+        }
+        .ant-input-affix-wrapper {
+            background-color: $primary_color2;
+            input{
+                background-color: $primary_color2;
+            }
+        }
+        .ant-form-item-explain-error{
+            margin-left: -120px;
+            padding-bottom: 10px;
+            
+        }
+        .login-form-button{
+            background-color: $primary_color;
+            padding: 0px 20px;
+            margin-bottom: 10px;
+            &:hover{
+                background-color: $primary_color;
+            }
+        }
+        .icons-wrap{
+            .icon{
+                font-size: 25px;
+                padding: 7px;
+            }
+        }
+        .admin-link{
+            a{
+                color:$primary_color;
+                font-weight: bold;
+            
+            }
+        }
+    
+    }
+    
+}
+// Change-Password
+.change-password-main-wrap{
+    background-color: #B3ECE5;
+    padding: 170px 0px;
+    min-height: 745px;
+    .ant-card {
+        width: 300px;
+        background-color: #01BFA6;
+        margin: auto;
+        padding: 40px 0px;
+        border:none;
+        .ant-card-head{
+            border: none;
+            color: white;
+            font-size: 20px;
+        }
+        .form-wrap{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .ant-form-item-explain-error{
+                color:#5c1d1d
+            }
+            .form-button{
+                .ant-form-item-control-input-content{
+                    display: flex;
+                    justify-content: space-around;
+                    padding-top: 25px;
+                    .btn-success{
+                        background-color: #52dfce;
+                    }
+                    .btn-cancel{
+                        background-color: #DC143B;
+                    }
+                }
+            }
+        }
+    }
+}

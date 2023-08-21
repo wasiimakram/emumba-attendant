@@ -1,0 +1,51 @@
+// *** Today's Availability ***//
+@import './../../scss/variables';
+
+.availability-main-wrap{
+    background: none;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 80vh;
+    input{
+        display: flex;
+        justify-content: center;
+        max-width: 300px;
+        margin: 0 auto 15px auto;
+        border-radius: 20px;
+        border: 1px solid $primary_color;
+    }
+    .user-cards{
+        display: flex;
+        align-items: center;
+        flex: none;
+        gap: 10px;
+        margin-top: 50px;
+        .ant-card{
+            width: 180px;
+            background-color: $primary_color2;
+            cursor: pointer;
+            span{
+                color:white
+            }
+            .ant-card-head{
+                border:none;
+                padding:0;
+                .ant-card-head-wrapper{
+                    background-color: $primary_color;
+                    padding: 5px;
+                    color:white;
+                }
+            }
+            .ant-card-body{
+                color:white;
+                text-align: initial;
+                padding: 0px 20px;
+                .no-record{
+                    color:yellow
+                }
+            }
+
+        }
+    }
+}

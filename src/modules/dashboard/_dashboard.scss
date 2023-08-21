@@ -1,0 +1,71 @@
+// *** User Dashboard ***//
+@import './../../scss/variables';
+
+.user-dashboard-main-wrap{
+    background: none;
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    height: 80vh;
+    .user-image{
+        width: 120px;
+        border: 3px solid gray;
+        border-radius: 50%;
+    }
+    h4{
+        color:$primary_color;
+    }
+    .user-cards{
+        display: flex;
+        align-items: center;
+        flex: none;
+        gap: 10px;
+        .ant-card{
+            background-color: $primary_color;
+            cursor: pointer;
+            span{
+                color:white
+            }
+        }
+    }
+}
+.user-dashboard-modal{
+    .ant-modal-body{
+        h3{
+            text-align: center;
+            color:#ffffff
+        }
+        h5{
+            text-align: center;
+            color:#ffffff;
+            margin-top: -10px;
+            margin-bottom: 30px;
+        }
+    }
+    .ant-modal-content{
+        background-color: $primary_color2;
+        .ant-table-tbody{
+            background-color: $primary_color2;
+            tr{
+                td{
+                    border-bottom: none;
+                    // text-align: center;
+                    color:white;
+                    background: none !important;
+                }
+            }
+        }
+        th{
+            background-color: $primary_color;
+            border:none;
+            color:white;
+            text-align: center;
+        }
+        .ant-picker{
+            display: flex;
+            justify-content: center;
+            max-width: 300px;
+            margin: 0 auto 15px auto;
+        }
+    }
+}
