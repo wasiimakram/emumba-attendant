@@ -1,21 +1,20 @@
 import React, { useState } from "react";
 import { Layout, Typography, Input, Table } from "antd";
 import { CaretDownOutlined, CaretUpOutlined } from "@ant-design/icons";
-import {
-  adminStatsTableColumns,
-  adminStatsTableRecord,
-} from "../../app-data/admin.dashbaord.data";
-import { adminStats } from "../../common/typings/admin.d";
+import { statsColumns, statsTable } from "../../app-data/admin.dashbaord.data";
+import { AdminStats } from "../../common/typings/admin.d";
+import "./stats.scss";
 const { Title } = Typography;
 const { Content } = Layout;
-export default function Stats() {
-  const [pageData, setPageData] = useState(adminStatsTableRecord);
+
+const Stats: React.FC = () => {
+  const [pageData, setPageData] = useState(statsTable);
 
   // Search logic
   const handleSearch = (title: string) => {
-    setPageData(filterRecords(adminStatsTableRecord, title));
+    setPageData(filterRecords(statsTable, title));
   };
-  const filterRecords = (recordArray: adminStats[], query: string) => {
+  const filterRecords = (recordArray: AdminStats[], query: string) => {
     return recordArray.filter((item) =>
       item.name.toLowerCase().includes(query.toLowerCase())
     );
@@ -24,7 +23,7 @@ export default function Stats() {
   const handleSort = (order: string) => {
     setPageData(sortRecords(pageData, order));
   };
-  const sortRecords = (recordArray: adminStats[], order: string) => {
+  const sortRecords = (recordArray: AdminStats[], order: string) => {
     return [...recordArray].sort((a, b) => {
       const nameA = a.name.toLowerCase();
       const nameB = b.name.toLowerCase();
@@ -48,7 +47,8 @@ export default function Stats() {
         <CaretUpOutlined onClick={() => handleSort("asc")} />
         <CaretDownOutlined onClick={() => handleSort("desc")} />
       </Content>
-      <Table columns={adminStatsTableColumns} dataSource={pageData} />
+      <Table columns={statsColumns} dataSource={pageData} />
     </Layout>
   );
-}
+};
+export default Stats;

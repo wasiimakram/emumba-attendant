@@ -26,7 +26,7 @@
             background-color: $primary_color2;
             cursor: pointer;
             span{
-                color:white
+                color:$white_color
             }
             .ant-card-head{
                 border:none;
@@ -34,15 +34,15 @@
                 .ant-card-head-wrapper{
                     background-color: $primary_color;
                     padding: 5px;
-                    color:white;
+                    color:$white_color;
                 }
             }
             .ant-card-body{
-                color:white;
+                color:$white_color;
                 text-align: initial;
                 padding: 0px 20px;
                 .no-record{
-                    color:yellow
+                    color:$yellow_color
                 }
             }
 

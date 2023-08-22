@@ -1,51 +1,55 @@
-import React,{useState} from 'react'
-import { Layout,Typography,Input,Card } from 'antd';
-import { absentRecord, leaveRecord, presentRecord } from '../../app-data/admin.dashbaord.data';
-import { adminAvailablity } from '../../common/typings/admin.d';
-const {Title} = Typography;
+import React, { useState } from "react";
+import { Layout, Typography, Input, Card } from "antd";
+import { availablityData } from "../../app-data/admin.dashbaord.data";
+import { AdminAvailablity, Data } from "../../common/typings/admin.d";
+import "./availablity.scss";
+const { Title } = Typography;
 const { Content } = Layout;
-export default function Availability() {
-        //drive state
-        const [filteredPresentRecord, setFilteredPresentRecord] = useState(presentRecord);
-        const [filteredLeaveRecord, setFilteredLeaveRecord] = useState(leaveRecord);
-        const [filteredAbsentRecord, setFilteredAbsentRecord] = useState(absentRecord);
-      
-        const handleSearch = (value:string) => {
-            setFilteredPresentRecord(filterRecords(presentRecord, value));
-            setFilteredLeaveRecord(filterRecords(leaveRecord, value));
-            setFilteredAbsentRecord(filterRecords(absentRecord, value));
-        };
-        const filterRecords = (recordArray:adminAvailablity,query:string) => {
-            return recordArray.filter(item => item.toLowerCase().includes(query.toLowerCase()));
-        };
 
-    return (
-        <Layout className="availability-main-wrap">
-            <Title className='modal-title' level={3}>Today's Availability</Title>
-            <Input  placeholder='Search Here...' onChange={(event)=>{handleSearch(event.target.value)}}/>
-            <Content className='user-cards'>
-                <Card title="Present">
-                    <Content>
-                        {filteredPresentRecord.length !==0 ? filteredPresentRecord.map((item, index) => (
-                            <p key={index}>{item}</p>
-                        )):<><p className='no-record'>No Record Found...</p></>}
-                    </Content>  
-                </Card>
-                <Card title="On Leave">
-                    <Content>
-                        {filteredLeaveRecord.length !==0 ? filteredLeaveRecord.map((item, index) => (
-                            <p key={index}>{item}</p>
-                        )):<><p className='no-record'>No Record Found...</p></>}
-                    </Content>  
-                </Card>
-                <Card title="Absent">
-                    <Content>
-                        {filteredAbsentRecord.length !==0 ? filteredAbsentRecord.map((item, index) => (
-                            <p key={index}>{item}</p>
-                        )):<><p className='no-record'>No Record Found...</p></>}
-                    </Content>  
-                </Card>
+const Availability: React.FC = () => {
+  const [filteredData, setFilteredData] = useState(availablityData);
+
+  const handleSearch = (value: string) => {
+    const categories: Data = {};
+    for (const category in availablityData) {
+      categories[category] = filter(availablityData[category], value);
+    }
+    setFilteredData(categories);
+  };
+
+  const filter = (recordArray: AdminAvailablity, query: string) => {
+    return recordArray.filter((item) =>
+      item.toLowerCase().includes(query.toLowerCase())
+    );
+  };
+
+  return (
+    <Layout className="availability-main-wrap">
+      <Title className="modal-title" level={3}>
+        Today's Availability
+      </Title>
+      <Input
+        placeholder="Search Here..."
+        onChange={(event) => {
+          handleSearch(event.target.value);
+        }}
+      />
+      <Content className="user-cards">
+        {Object.keys(availablityData).map((category) => (
+          <Card title={category} key={category}>
+            <Content>
+              {filteredData[category].length !== 0 ? (
+                filteredData[category].map((item: string, index: number) => (
+                  <p key={index}>{item}</p>
+                ))
+              ) : (
+                <p className="no-record">No Record Found...</p>
+              )}
             </Content>
-        </Layout>
-    )
-}
+          </Card>
+        ))}
+      </Content>
+    </Layout>
+  );
+};
+export default Availability;

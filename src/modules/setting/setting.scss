@@ -64,10 +64,10 @@
         right: 75px;
         button{
             background: $primary_color;
-            color: white;
+            color: $white_color;
             font-weight: bold;
             &:hover{
-                color:white !important;
+                color:$white_color !important;
                 border:none ;
             }
         }
@@ -80,7 +80,7 @@
         h4{
             margin-top: 0px;
             margin-bottom: 30px;
-            color:#ffffff
+            color:$white_color
         }
     }
     .ant-modal-content{
@@ -114,10 +114,10 @@
                 justify-content: space-around;
                 padding-top: 25px;
                 .btn-success{
-                    background-color: #52dfce;
+                    background-color: $primary_color;
                 }
                 .btn-cancel{
-                    background-color: #DC143B;
+                    background-color: $primary_color6;
                 }
             }
         }
@@ -125,11 +125,14 @@
 }
 .delete-modal {
     .ant-modal-title {
-      color: red !important;
-      font-weight: bold !important;
+      color: $primary_color6 !important;
+      font-weight: bold;
     }
     .ant-btn-primary {
-      background-color: red !important;
+      background-color: $primary_color6;
       font-weight: bold;
+      &:hover{
+          background-color: $primary_color6 !important; // important because its own css overriding it
+      }
     }
   }

@@ -1,7 +1,7 @@
 // *** Login ***//
-$primary_color:#0ec1b0;
-$primary_color2:#F0F0F0;
-// Logig-Page
+@import './../../scss/variables';
+// $primary_color:#0ec1b0;
+// $primary_color2:#F0F0F0;
 .user-login-main-wrap{
     h4{color:$primary_color}
     margin-top: 150px;
@@ -17,9 +17,9 @@ $primary_color2:#F0F0F0;
             color:$primary_color
         }
         .ant-input-affix-wrapper {
-            background-color: $primary_color2;
+            background-color: $primary_color5;
             input{
-                background-color: $primary_color2;
+                background-color: $primary_color5;
             }
         }
         .ant-form-item-explain-error{
@@ -54,18 +54,18 @@ $primary_color2:#F0F0F0;
 }
 // Change-Password
 .change-password-main-wrap{
-    background-color: #B3ECE5;
+    background-color: $primary_color3;
     padding: 170px 0px;
     min-height: 745px;
     .ant-card {
         width: 300px;
-        background-color: #01BFA6;
+        background-color: $primary_color2;
         margin: auto;
         padding: 40px 0px;
         border:none;
         .ant-card-head{
             border: none;
-            color: white;
+            color: $white_color;
             font-size: 20px;
         }
         .form-wrap{
@@ -73,7 +73,7 @@ $primary_color2:#F0F0F0;
             justify-content: center;
             align-items: center;
             .ant-form-item-explain-error{
-                color:#5c1d1d
+                color:$primary_color4;
             }
             .form-button{
                 .ant-form-item-control-input-content{
@@ -81,10 +81,10 @@ $primary_color2:#F0F0F0;
                     justify-content: space-around;
                     padding-top: 25px;
                     .btn-success{
-                        background-color: #52dfce;
+                        background-color: $primary_color;
                     }
                     .btn-cancel{
-                        background-color: #DC143B;
+                        background-color: $primary_color6;
                     }
                 }
             }

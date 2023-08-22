@@ -4,12 +4,12 @@
 .admin-dashboard-main-wrap{
     background: none;
     display: flex;
-    justify-content: center; /* Horizontally center the content */
-    align-items: center; /* Vertically center the content */
+    justify-content: center;
+    align-items: center;
     height: 80vh;
     .user-image{
         width: 120px;
-        border: 3px solid gray;
+        border: 3px solid $gray_color;
         border-radius: 50%;
     }
     h4{
@@ -21,14 +21,14 @@
         flex: none;
         gap: 10px;
         a{
-            color:white;
+            color:$white_color;
         }
         .ant-card{
             background-color: $primary_color;
             width: 165px;
             cursor: pointer;
             span{
-                color:white
+                color:$white_color
             }
         }
     }
